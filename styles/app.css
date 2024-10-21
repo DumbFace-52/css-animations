@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: 1.5rem "New Rocker", system-ui;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  display: grid;
+  place-content: center;
+}
+
+/* Apply individual transformations */
+.square:nth-child(1) {
+  background-color: khaki;
+  /* transform: translateX(-50%); */
+  /* transform: rotateX(45deg); */
+  /* transform: scaleX(120%); */
+  /* transform: skewX(-10deg); */
+}
+
+.square:nth-child(2) {
+  background-color: chartreuse;
+  /* transform: translateY(-2rem); */
+  /* transform: rotateY(180deg); */
+  /* transform: scaleY(120%); */
+  /* transform: skewY(10deg); */
+}
+
+.square:nth-child(3) {
+  background-color: royalblue;
+  /* transform: translate(100%, -5rem); */
+  /* transform: rotate(133deg);  */
+  /* transform: scale(50%, 50%); */
+  /* transform: skew(-10deg, -10deg); */
+}
+
+.square:hover {
+  background-color: firebrick;
+  /* transition-property: background-color, transform;
+  transition-duration: 2s, 3s;
+  transition-delay: .5s; 
+  transition-timing-function: linear; */
+  transition: all 2s .5s;
+}
+
+div:last-child:hover {
+  transform: rotate(180deg);
+}
+
+.animate {
+  /* animation-name: anime;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 2s;
+  animation-iteration-count: 7;
+  animation-direction: normal;
+  animation-fill-mode: forwards; */
+  animation: 7s ease-in-out 2s 3 normal forwards anime;
+}
+
+@keyframes anime {
+  0% {
+    transform: translateX(0);
+  }
+
+  33% {
+    transform: translateX(600px) rotate(180deg); 
+  }
+
+  66% {
+    transform: translateX(-600px) rotate(-100deg);
+  }
+
+  100% {
+    transform: translateX(0);
+    background-color: darkorchid;
+  }
+}
